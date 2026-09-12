@@ -12,9 +12,8 @@ Projeto do Jogo Mario desenvolvido como parte da atividade prática de Git e Git
 Não requer instalação de pacotes externos.
 ```bash
 cd frontend
-git add README.md
-git commit -m "docs: preenche tabela final de integrantes"
-git push origin main
+
+
 ## Integrantes
 
 |      Nome           | Matrícula |     Papel    |
