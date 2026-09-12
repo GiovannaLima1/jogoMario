@@ -9,6 +9,11 @@ Projeto do Jogo Mario desenvolvido como parte da atividade prática de Git e Git
 - JavaScript
 
 ## Instalação
-Não requer instalação de pacotes externos.
 ```bash
 cd frontend
+npm install
+```
+## Execução
+```bash
+npm run dev
+```
