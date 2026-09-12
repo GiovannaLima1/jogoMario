@@ -12,7 +12,7 @@ Projeto do Jogo Mario desenvolvido como parte da atividade prática de Git e Git
 Não requer instalação de pacotes externos.
 ```bash
 cd frontend
-
+```
 
 ## Integrantes
 
