@@ -1,0 +1,13 @@
+﻿{
+  "name": "jogo-mario-frontend",
+  "version": "1.0.0",
+  "description": "Front-End do Jogo Mario",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx serve ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
+}
