@@ -47,7 +47,7 @@ Entre na pasta do frontend:
 ```bash
 cd frontend
 npm install
-
+```
 ##Execução
 
 Ainda dentro da pasta `frontend`, execute:
@@ -79,7 +79,7 @@ jogoMario/
 ├── .gitignore
 ├── LICENSE
 └── README.md
-
+```
 ## Integrantes
 
 | Nome | Matrícula | Papel |
