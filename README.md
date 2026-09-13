@@ -47,6 +47,7 @@ Entre na pasta do frontend:
 ```bash
 cd frontend
 npm install
+```
 
 ## Execução
 
@@ -59,7 +60,7 @@ Após iniciar o servidor, acesse no navegador o endereço informado pelo termina
 http://localhost:3000
 
 ## Estrutura do projeto
-
+```
 jogoMario/
 ├── backend/
 ├── docs/
@@ -79,7 +80,7 @@ jogoMario/
 ├── .gitignore
 ├── LICENSE
 └── README.md
-
+```
 ## Integrantes
 
 | Nome | Matrícula | Papel |
