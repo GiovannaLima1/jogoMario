@@ -3,6 +3,11 @@ const pipe = document.querySelector('.pipe');
 
 let loop;
 let gameOver = false;
+const startScreen = document.querySelector('.start-screen');
+const startButton = document.querySelector('#start-button');
+const gameOverScreen = document.querySelector('#game-over-screen');
+const restartButton = document.querySelector('#restart-button');
+
 
 const jump = () => {
     if (gameOver) return;
@@ -16,6 +21,9 @@ const jump = () => {
 
 const startGame = () => {
     gameOver = false;
+    startScreen.style.display = 'none';
+    gameOverScreen.style.display = 'none';
+
 
     mario.src = './images/mario.gif';
     mario.style.width = '150px';
@@ -30,40 +38,40 @@ const startGame = () => {
     pipe.style.animation = '';
 
     loop = setInterval(() => {
-        const pipePosition = pipe.offsetLeft;
-
-        const marioPosition =
-            +window.getComputedStyle(mario).bottom.replace('px', '');
+        const marioRect = mario.getBoundingClientRect();
+        const pipeRect = pipe.getBoundingClientRect();
 
         if (
-            pipePosition <= 150 &&
-            pipePosition > 0 &&
-            marioPosition < 80
-        ) {
-            pipe.style.animation = 'none';
-            pipe.style.right = `${pipePosition}px`;
-
-            mario.style.animation = 'none';
-            mario.style.bottom = `${marioPosition}px`;
-
-            mario.src = './images/game-over.png';
-            mario.style.width = '75px';
-
-            gameOver = true;
-            clearInterval(loop);
-        }
+    marioRect.right > pipeRect.left &&
+    marioRect.left < pipeRect.right &&
+    marioRect.bottom > pipeRect.top &&
+    marioRect.top < pipeRect.bottom
+) {
+    pipe.style.animation = 'none';
+    mario.style.animation = 'none';
+    mario.src = './images/game-over.png';
+    mario.style.width = '75px';
+    gameOver = true;
+    gameOverScreen.style.display = 'flex';
+    clearInterval(loop);
+}
     }, 10);
 };
+startButton.addEventListener('click', startGame);
 
 document.addEventListener('keydown', (event) => {
-    if (event.key === 'Enter' && gameOver) {
-        startGame();
+    if (event.key === 'Enter') {
+        if (gameOver) {
+            startGame();
+        } else if (startScreen.style.display !== 'none') {
+            startGame();
+        }
         return;
     }
-
     jump();
 });
 
 document.addEventListener('touchstart', jump);
+restartButton.addEventListener('click', startGame);
 
-startGame();
+
