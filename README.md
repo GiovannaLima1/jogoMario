@@ -54,6 +54,7 @@ Ainda dentro da pasta `frontend`, execute:
 
 ```bash
 npm run dev
+```
 
 Após iniciar o servidor, acesse no navegador o endereço informado pelo terminal, normalmente: 
 http://localhost:3000
