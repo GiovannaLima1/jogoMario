@@ -60,7 +60,7 @@ Após iniciar o servidor, acesse no navegador o endereço informado pelo termina
 http://localhost:3000
 
 ## Estrutura do projeto
-
+```
 jogoMario/
 ├── backend/
 ├── docs/
