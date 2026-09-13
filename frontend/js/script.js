@@ -1,7 +1,12 @@
 const mario = document.querySelector('.mario');
 const pipe = document.querySelector('.pipe');
 
+let loop;
+let gameOver = false;
+
 const jump = () => {
+    if (gameOver) return;
+
     mario.classList.add('jump');
 
     setTimeout(() => {
@@ -9,23 +14,56 @@ const jump = () => {
     }, 500);
 };
 
-const loop = setInterval(() => {
-    const pipePosition = pipe.offsetLeft;
-    const marioPosition = +window.getComputedStyle(mario).bottom.replace('px', '');
+const startGame = () => {
+    gameOver = false;
 
-    if (pipePosition <= 150 && pipePosition > 0 && marioPosition < 80) {
-        pipe.style.animation = 'none';
-        pipe.style.right = `${pipePosition}px`;
+    mario.src = './images/mario.gif';
+    mario.style.width = '150px';
+    mario.style.bottom = '0px';
+    mario.style.animation = '';
+    
+    pipe.style.right = '-80px';
+    pipe.style.animation = 'none';
 
-        mario.style.animation = 'none';
-        mario.style.bottom = `${marioPosition}px`;
+    // Reinicia a animação do tubo
+    void pipe.offsetWidth;
+    pipe.style.animation = '';
 
-        mario.src = './images/game-over.png';
-        mario.style.width = '75px';
+    loop = setInterval(() => {
+        const pipePosition = pipe.offsetLeft;
 
-        clearInterval(loop);
+        const marioPosition =
+            +window.getComputedStyle(mario).bottom.replace('px', '');
+
+        if (
+            pipePosition <= 150 &&
+            pipePosition > 0 &&
+            marioPosition < 80
+        ) {
+            pipe.style.animation = 'none';
+            pipe.style.right = `${pipePosition}px`;
+
+            mario.style.animation = 'none';
+            mario.style.bottom = `${marioPosition}px`;
+
+            mario.src = './images/game-over.png';
+            mario.style.width = '75px';
+
+            gameOver = true;
+            clearInterval(loop);
+        }
+    }, 10);
+};
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter' && gameOver) {
+        startGame();
+        return;
     }
-}, 10);
 
-document.addEventListener('keydown', jump);
+    jump();
+});
+
 document.addEventListener('touchstart', jump);
+
+startGame();
