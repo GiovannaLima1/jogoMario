@@ -91,3 +91,6 @@ jogoMario/
 | João Victor Carlos | 01802219 | Desenvolvedor |
 | Luma Rodrigues | 01833902 | Testador |
 | Willams Eduardo | 01814383 | Testador |
+
+## Status dos Testes
+[x] Jogo testado e funcionando perfeitamente.
