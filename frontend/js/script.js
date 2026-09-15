@@ -24,7 +24,6 @@ const startGame = () => {
     startScreen.style.display = 'none';
     gameOverScreen.style.display = 'none';
 
-
     mario.src = './images/mario.gif';
     mario.style.width = '150px';
     mario.style.bottom = '0px';
@@ -41,20 +40,23 @@ const startGame = () => {
         const marioRect = mario.getBoundingClientRect();
         const pipeRect = pipe.getBoundingClientRect();
 
+        // Criamos uma margem para encolher a "caixa invisível" do Mario
+        const margem = 25; 
+
         if (
-    marioRect.right > pipeRect.left &&
-    marioRect.left < pipeRect.right &&
-    marioRect.bottom > pipeRect.top &&
-    marioRect.top < pipeRect.bottom
-) {
-    pipe.style.animation = 'none';
-    mario.style.animation = 'none';
-    mario.src = './images/game-over.png';
-    mario.style.width = '75px';
-    gameOver = true;
-    gameOverScreen.style.display = 'flex';
-    clearInterval(loop);
-}
+            (marioRect.right - margem) > pipeRect.left &&
+            (marioRect.left + margem) < pipeRect.right &&
+            (marioRect.bottom - margem) > pipeRect.top &&
+            (marioRect.top + margem) < pipeRect.bottom
+        ) {
+            pipe.style.animation = 'none';
+            mario.style.animation = 'none';
+            mario.src = './images/game-over.png';
+            mario.style.width = '75px';
+            gameOver = true;
+            gameOverScreen.style.display = 'flex';
+            clearInterval(loop);
+        }
     }, 10);
 };
 startButton.addEventListener('click', startGame);
