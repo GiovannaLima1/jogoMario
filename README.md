@@ -47,19 +47,20 @@ Entre na pasta do frontend:
 ```bash
 cd frontend
 npm install
-
+```
 ##Execução
 
 Ainda dentro da pasta `frontend`, execute:
 
 ```bash
 npm run dev
+```
 
 Após iniciar o servidor, acesse no navegador o endereço informado pelo terminal, normalmente: 
 http://localhost:3000
 
 ## Estrutura do projeto
-
+```
 jogoMario/
 ├── backend/
 ├── docs/
@@ -79,7 +80,7 @@ jogoMario/
 ├── .gitignore
 ├── LICENSE
 └── README.md
-
+```
 ## Integrantes
 
 | Nome | Matrícula | Papel |
@@ -90,3 +91,6 @@ jogoMario/
 | João Victor Carlos | 01802219 | Desenvolvedor |
 | Luma Rodrigues | 01833902 | Testador |
 | Willams Eduardo | 01814383 | Testador |
+
+## Status dos Testes
+[x] Jogo testado e funcionando perfeitamente.

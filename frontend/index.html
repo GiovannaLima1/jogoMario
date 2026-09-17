@@ -1,24 +1,141 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
-    <script src="./js/script.js" defer></script>
-    <title>Jogo Mario</title>
+
+```
+<link
+    href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+    rel="stylesheet"
+>
+
+<link rel="stylesheet" href="./css/style.css">
+
+<script src="./js/script.js" defer></script>
+
+<title>Jogo Mario</title>
+```
+
 </head>
+
 <body>
-    <div class="start-screen">
-        <h1>Jogo Mario</h1>
-        <button id="start-button">Iniciar Jogo</button>
+
+```
+<!-- TELA INICIAL -->
+<div class="start-screen">
+
+    <h1>Jogo Mario</h1>
+
+    <button id="start-button">
+        Iniciar Jogo
+    </button>
+
+</div>
+
+
+<!-- BARRA DE STATUS -->
+<div class="status-bar">
+
+    <div class="status-item">
+
+        <span class="status-label">
+            MARIO
+        </span>
+
+        <span id="lives">
+            × 3
+        </span>
+
     </div>
-    <img src="./images/clouds.png" class="clouds" alt="Nuvens">
-    <img src="./images/mario.gif" class="mario" alt="Mario">
-    <img src="./images/pipe.png" class="pipe" alt="Tubo">
+
+
+    <div class="status-item">
+
+        <span class="status-label">
+            SCORE
+        </span>
+
+        <span id="score">
+            000000
+        </span>
+
+    </div>
+
+
+    <div class="status-item">
+
+        <span class="status-label">
+            WORLD
+        </span>
+
+        <span id="world">
+            1-1
+        </span>
+
+    </div>
+
+
+    <div class="status-item">
+
+        <span class="status-label">
+            TIME
+        </span>
+
+        <span id="time">
+            300
+        </span>
+
+    </div>
+
 </div>
-<div class="game-over-screen" id="game-over-screen">
-    <h1>GAME OVER</h1>
-    <button id="restart-button">Reiniciar Jogo</button>
+
+
+<!-- ÁREA DO JOGO -->
+<div class="game">
+
+    <img
+        src="./images/clouds.png"
+        class="clouds"
+        alt="Nuvens"
+    >
+
+    <img
+        src="./images/mario.gif"
+        class="mario"
+        alt="Mario"
+    >
+
+    <img
+        src="./images/pipe.png"
+        class="pipe"
+        alt="Tubo"
+    >
+
+
+  
 </div>
+
+
+<!-- GAME OVER -->
+<div
+    class="game-over-screen"
+    id="game-over-screen"
+>
+
+    <h1>
+        GAME OVER
+    </h1>
+
+    <button id="restart-button">
+        Reiniciar Jogo
+    </button>
+
+</div>
+```
+
 </body>
+
 </html>
